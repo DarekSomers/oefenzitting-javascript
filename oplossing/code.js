@@ -16,9 +16,22 @@ function draw_puzzle(puzzle){
 }
 
 function generate_puzzle_html(puzzle){
+  let table_inner_html = "";
+  for(let i = 0; i < board.length; i++){
+
+      let row_html = "<tr>"
+      for(let j = 0; j < board[i].length; j++){
+          row_html += generate_square(board[i][j]);
+      }
+      row_html += "</tr>";
+      table_inner_html += row_html;
+  }
+
+  return `<table>${table_inner_html}</table>`;
+
+
     //TODO: Implementeer deze functie!
     //puzzle bevat een tweedimensionale lijst die de sliding puzzle voorstelt
     //Kijk naar de functie generate_board_html in voorbeeld 7 uit het hoorcollege voor inspiratie
 }
-
-
+d
